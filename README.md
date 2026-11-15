@@ -100,3 +100,83 @@ Before running the project, ensure that you have:
 
 ## Installation and Setup
 
+### 1. Clone the Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd my_mcp_server
+```
+
+### 2. Install Dependencies
+
+```bash
+uv sync
+```
+
+### 3. Configure Environment Variables
+
+Create a `.env` file in the project root directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+Do not commit your `.env` file or expose your API key.
+
+### 4. Run the MCP Server Inspector
+
+```bash
+uv run fastmcp dev inspector main.py
+```
+
+This allows you to inspect the MCP server and test its available tools.
+
+### 5. Launch the Application
+
+```bash
+uv run streamlit run app.py
+```
+
+The Streamlit application will open in your browser.
+
+## Example Queries
+
+The assistant supports natural-language queries such as:
+
+- Check whether the billing service is operational.
+- Is the database service running?
+- Calculate compound interest on 10000 at 5% for 3 years.
+
+The assistant uses Groq to identify the appropriate MCP tool, executes it through the MCP client, and returns the result in natural language.
+
+## Planned Enhancements
+
+- [ ] Website availability monitoring
+- [ ] System information and health monitoring
+- [ ] File reading and search capabilities
+- [ ] Additional mathematical and utility tools
+- [ ] Improved tool execution logging
+- [ ] Enhanced exception handling and validation
+- [ ] Improved Streamlit interface
+- [ ] MCP connection management
+- [ ] Automated testing
+
+## Project Objectives
+
+The primary objective of this project is to explore how the Model Context Protocol enables LLMs to interact with external tools through a standardized interface.
+
+The project focuses on implementing:
+
+- MCP client-server communication
+- Dynamic tool discovery
+- LLM-driven tool selection
+- Automated tool execution
+- Integration of MCP with a conversational AI interface
+
+## Author
+
+**Noshaba Fatima**
+
+---
+
+This project is actively under development. Additional tools and capabilities will be introduced incrementally.
